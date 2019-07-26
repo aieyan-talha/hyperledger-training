@@ -1,0 +1,26 @@
+namespace org.acme.airline.participant 
+
+//Abstract resources cant be instantiated but support extention by inheritance 
+abstract participant ACMEParticipant identified by participantKey {
+  o String participantKey
+  o Contact contact
+}
+
+//Concept: A way of creating a generic class, cannot represent a resource
+concept Contact {
+  o String fName
+  o String lName
+  o String email
+}
+
+//Inherits from abstract resourse
+participant ACMENetworkAdmin extends ACMEParticipant {
+}
+
+participant ACMEPersonnel extends ACMEParticipant {
+  o String department
+}
+
+participant B2BPartner extends ACMEParticipant {
+
+}
